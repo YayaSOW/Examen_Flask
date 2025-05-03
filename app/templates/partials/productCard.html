@@ -1,0 +1,25 @@
+<div class="max-w-sm bg-white border border-gray-200 rounded-2xl shadow-md dark:bg-gray-800 dark:border-gray-700 overflow-hidden flex flex-col">
+    <a href="#">
+        <img class="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
+            src="{{ url_for('static', filename='img/' + product.image) if product.image else '/static/img/not_Found_image.png' }}"
+            alt="{{ product.name }}">
+    </a>
+
+    <div class="flex flex-col justify-between flex-grow p-5 space-y-4">
+        <h5 class="text-2xl font-semibold text-gray-900 dark:text-white truncate">
+            {{ product.name }}
+        </h5>
+
+        <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+            {{ product.description|default("Pas de description", true) }}
+        </p>
+
+        <div class="flex items-center justify-between">
+            <span class="text-xl font-bold text-blue-600 dark:text-blue-400">
+                {{ product.price }} €
+            </span>
+        </div>
+
+        {% include "partials/cardButtons.html" %}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-bold text-red-500 mb-4">404</h1>
+    <p class="text-xl">Page non trouvée</p>
+    <a href="{{ url_for('index') }}" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded">Retour à l'accueil</a>
+</div>
+{% endblock %}
+{% block title %} Page non trouvée {% endblock %}   

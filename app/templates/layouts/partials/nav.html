@@ -1,0 +1,13 @@
+<nav class="bg-blue-600 p-4 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="{{ url_for('index') }}" class="text-xl font-bold">Gestion Produits</a>
+        <div>
+            {% if current_user.is_authenticated %}
+                <span class="mr-4"> {{ current_user.username }}</span>
+                <a href="{{ url_for('logout') }}" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded">Déconnexion</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded">Connexion</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
